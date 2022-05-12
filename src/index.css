@@ -18,7 +18,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-::-moz-selection {
+/* ::-moz-selection {
   background: var(--point-color);
   color: #fff;
 }
@@ -26,7 +26,7 @@ body {
 ::selection {
   background: var(--point-color);
   color: #fff;
-}
+} */
 
 a {
   text-decoration: none;
