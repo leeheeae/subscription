@@ -8,18 +8,22 @@ import Responsive from '../components/common/Responsive';
 
 //styled
 const MainPageBlock = styled(Responsive)`
-  min-height: 100vh;
   padding: 5rem 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+`;
+
+const TitleBox = styled.div`
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--color-01);
 `;
 
 const MainPage = () => {
   return (
     <MainPageBlock>
-      {/* <h1>청약 확인하기</h1> */}
+      <TitleBox>
+        <h1>청약 분양정보 조회 서비스</h1>
+      </TitleBox>
       <Shortcut />
     </MainPageBlock>
   );

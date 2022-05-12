@@ -14,7 +14,7 @@ const ShortcutBlock = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   border-radius: 1.2rem;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.07);
+  box-shadow: var(--box-shodow);
 
   > a {
     width: 48%;
@@ -26,23 +26,38 @@ const ShortcutItem = styled.div`
   background-color: #fff;
   width: 100%;
   border-radius: 1rem;
-  padding: 1.5rem;
+  padding: 1.5rem 1.7rem;
   background-color: #fff;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.07);
-  color: var(--color-03);
+  box-shadow: var(--box-shodow);
+  color: var(--color-04);
+  transition: 0.2s;
 
   .icon {
     font-size: 36px;
   }
   h3 {
-    font-size: 1.2rem;
+    margin: 2px 0 6px;
+    font-size: 1.3rem;
     font-weight: 700;
-    color: var(--color-black);
+    color: var(--color-01);
   }
   p {
-    font-size: 0.94rem;
-    margin-top: 8px;
-    color: #999;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--color-05);
+  }
+
+  &:hover {
+    background-color: var(--color-05);
+    .icon svg {
+      fill: #fff;
+    }
+    h3 {
+      color: #fff;
+    }
+    p {
+      color: #ddd;
+    }
   }
 `;
 
