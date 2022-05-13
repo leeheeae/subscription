@@ -21,9 +21,9 @@ const TitleBox = styled.div`
 const MainPage = () => {
   return (
     <MainPageBlock>
-      <TitleBox>
+      {/* <TitleBox>
         <h1>청약 분양정보 조회 서비스</h1>
-      </TitleBox>
+      </TitleBox> */}
       <Shortcut />
     </MainPageBlock>
   );
