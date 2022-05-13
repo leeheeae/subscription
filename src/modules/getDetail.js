@@ -6,29 +6,34 @@ import { takeLatest } from '@redux-saga/core/effects';
 import * as testAPI from '../lib/api';
 
 //
-const [TEST_ACTION, TEST_ACTION_SUCCESS, TEST_ACTION_FAILURE] =
-  createRequestActionTypes('getDetail/TEST_ACTION');
+const [APT_DETAIL, APT_DETAIL_SUCCESS, APT_DETAIL_FAILURE] =
+  createRequestActionTypes('getDetail/APT_DETAIL');
 
-export const testAction = createAction(TEST_ACTION);
+export const testAction = createAction(APT_DETAIL, (data) => data);
 
-const getDetailTestActionSaga = createRequestSaga(TEST_ACTION, testAPI.test);
+const getDetailTestActionSaga = createRequestSaga(APT_DETAIL, testAPI.test);
 
 export function* getDetailSaga() {
-  yield takeLatest(TEST_ACTION, getDetailTestActionSaga);
+  yield takeLatest(APT_DETAIL, getDetailTestActionSaga);
 }
 
 const initialState = {
-  test: null,
+  today: {
+    APTDetail: null,
+  },
   error: null,
 };
 
 const getDetail = handleActions(
   {
-    [TEST_ACTION_SUCCESS]: (state, { payload: data }) => ({
+    [APT_DETAIL_SUCCESS]: (state, { payload: data }) => ({
       ...state,
-      test: data,
+      today: {
+        ...state.today,
+        APTDetail: data,
+      },
     }),
-    [TEST_ACTION_FAILURE]: (state, { payload: error }) => ({
+    [APT_DETAIL_FAILURE]: (state, { payload: error }) => ({
       ...state,
       error,
     }),

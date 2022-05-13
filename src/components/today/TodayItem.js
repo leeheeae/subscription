@@ -1,7 +1,11 @@
 import React from 'react';
 
-const TodayItem = () => {
-  return <div></div>;
+const TodayItem = ({ data }) => {
+  return (
+    <div>
+      <div>{data.HOUSE_NM}</div>
+    </div>
+  );
 };
 
 export default TodayItem;
