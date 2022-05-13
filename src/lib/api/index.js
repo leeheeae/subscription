@@ -8,13 +8,11 @@ const instance = axios.create({
 //   'Authorization'
 // ] = `serviceKey ${process.env.REACT_APP_API_KEY}`;
 
-export const test = instance.get(
-  '/ApplyhomeInfoDetailSvc/v1/getAPTLttotPblancDetail',
-  {
+export const test = () =>
+  instance.get('/ApplyhomeInfoDetailSvc/v1/getAPTLttotPblancDetail', {
     params: {
       serviceKey: process.env.REACT_APP_API_KEY,
     },
-  },
-);
+  });
 
 export default instance;
